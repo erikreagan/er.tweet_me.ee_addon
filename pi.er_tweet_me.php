@@ -34,8 +34,8 @@ class Er_tweet_me
       $data = ($TMPL->fetch_param('data') != '') ? $REGX->unhtmlentities($TMPL->fetch_param('data')) : $REGX->unhtmlentities($TMPL->tagdata) ;
       
       $patterns = array(
-         '/@([a-zA-Z0-9_]+)/',
-         '/#(\S+)/'
+         '/(?<=\s)@([a-zA-Z0-9_]+)/',
+         '/(?<=\s)#(\S+)/'
          );
       
       $replacements = array(
