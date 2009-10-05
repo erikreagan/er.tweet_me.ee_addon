@@ -7,15 +7,16 @@
  * /system/plugins/ folder in your ExpressionEngine installation.
  *
  * @package ERTweetMe
- * @version 0.1.0
- * @author Erik Reagan http://erikreagan.com
+ * @version 1.0.0
+ * @author Erik Reagan, developer http://erikreagan.com 
+ * @author Andy Marshall, concept http://www.moogaloo.com 
  * @copyright Copyright (c) 2009 Erik Reagan
  * @see http://erikreagan.com/projects/er_tweet_me/
  */
 
 $plugin_info       = array(
    'pi_name'        => 'ER Tweet Me',
-   'pi_version'     => '0.1.0',
+   'pi_version'     => '1.0.0',
    'pi_author'      => 'Erik Reagan',
    'pi_author_url'  => 'http://erikreagan.com',
    'pi_description' => 'Automatically links up twitter user timeline links and hash searches',
@@ -31,8 +32,15 @@ class Er_tweet_me
    {
       global $TMPL, $REGX;
 
+      // I'm going to add a space to the front of the 'data' parameter so I don't have
+      // to write a crazy regular expression to get the job done. This is just to single 
+      // out the strings that are twitter-related and not email addresses or div id links
+      // we don't want to process things like erik@erikreagan.com or <a href="#comments">
       $data = ($TMPL->fetch_param('data') != '') ? ' '.$REGX->unhtmlentities($TMPL->fetch_param('data')) : $REGX->unhtmlentities($TMPL->tagdata) ;
       
+      
+      // First pattern is @names
+      // Second pattern is #hashtags
       $patterns = array(
          '/(?<=\s)@([a-zA-Z0-9_]+)/',
          '/(?<=\s)#(\S+)/'
@@ -43,13 +51,13 @@ class Er_tweet_me
          '<a href="http://twitter.com/search?q=%23$1" title="Search $0 on Twitter">$0</a>'
          );
       
+      // Replace all matches and return the data
       $this->return_data = preg_replace($patterns,$replacements,$data);
 
    }
 
    /**
     * Plugin Usage
-    * @see ['pi_usage']
     */
 
    // This function describes how the plugin is used.

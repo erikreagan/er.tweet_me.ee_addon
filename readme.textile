@@ -2,17 +2,23 @@ h1. ER Tweet Me
 
 Automatically links up twitter user timeline links and hash searches
 
-h2. Single String Use
+h2. Credits
+
+This plugin was is the brainchild of <a href="http://www.moogaloo.com/">Andy Marshall</a> (@moogaloo) and was developed by <a href="http://erikreagan.com/">Erik Reagan</a> (@erikreagan)
+
+h2. Usage
+
+h3. Single String Use
 
 To turn a single name or hash into a link just use the single tag like this:
 
 <pre><code>
 {exp:er_tweet_me data="@erikreagan"}
-or
+ or
 {exp:er_tweet_me data="#expressionengine"}
 </code></pre>
 
-h2. Longer Text
+h3. Longer Text
 
 To convert all occurrences of @name or #hashtag wrap the contents in a tag pair like this:
 
@@ -26,6 +32,6 @@ To convert all occurrences of @name or #hashtag wrap the contents in a tag pair 
 
 h2. Change Log
 
-*Oct 5th, 2009*
+*+Oct 5th, 2009: 1.0.0+*
 
 * Initial Release
