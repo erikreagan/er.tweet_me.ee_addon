@@ -1,6 +1,6 @@
 h1. ER Tweet Me
 
-Automatically links up twi
+Automatically links up twitter user timeline links and hash searches
 
 h2. Single String Use
 
@@ -8,7 +8,7 @@ To turn a single name or hash into a link just use the single tag like this:
 
 <pre><code>
 {exp:er_tweet_me data="@erikreagan"}
-
+or
 {exp:er_tweet_me data="#expressionengine"}
 </code></pre>
 
