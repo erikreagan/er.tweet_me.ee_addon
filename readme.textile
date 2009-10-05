@@ -1,16 +1,16 @@
 h1. ER Tweet Me
 
-Automatically links up twitter user timeline links and hash searches
+Automatically links up twitter @mentions and #hashtag searches
 
 h2. Credits
 
-This plugin was is the brainchild of <a href="http://www.moogaloo.com/">Andy Marshall</a> (@moogaloo) and was developed by <a href="http://erikreagan.com/">Erik Reagan</a> (@erikreagan)
+This plugin was is the brainchild of <a href="http://www.moogaloo.com/">Andy Marshall</a>, @moogaloo and was developed by <a href="http://erikreagan.com/">Erik Reagan</a>, @erikreagan
 
 h2. Usage
 
 h3. Single String Use
 
-To turn a single name or hash into a link just use the single tag like this:
+To turn a single username or hash into a link just use the single tag like this:
 
 <pre><code>
 {exp:er_tweet_me data="@erikreagan"}
