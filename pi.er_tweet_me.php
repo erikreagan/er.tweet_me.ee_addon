@@ -31,7 +31,7 @@ class Er_tweet_me
    {
       global $TMPL, $REGX;
 
-      $data = ($TMPL->fetch_param('data') != '') ? $REGX->unhtmlentities($TMPL->fetch_param('data')) : $REGX->unhtmlentities($TMPL->tagdata) ;
+      $data = ($TMPL->fetch_param('data') != '') ? ' '.$REGX->unhtmlentities($TMPL->fetch_param('data')) : $REGX->unhtmlentities($TMPL->tagdata) ;
       
       $patterns = array(
          '/(?<=\s)@([a-zA-Z0-9_]+)/',
