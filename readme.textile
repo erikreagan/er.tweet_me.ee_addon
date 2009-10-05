@@ -6,21 +6,23 @@ h2. Single String Use
 
 To turn a single name or hash into a link just use the single tag like this:
 
-<code>
+<pre><code>
 {exp:er_tweet_me data="@erikreagan"}
 
 {exp:er_tweet_me data="#expressionengine"}
-</code>
+</code></pre>
 
 h2. Longer Text
 
 To convert all occurrences of @name or #hashtag wrap the contents in a tag pair like this:
 
+<pre>
 <code>
 {exp:er_tweet_me}
 {body}
 {/exp:er_tweet_me}
 </code>
+</pre>
 
 h2. Change Log
 
