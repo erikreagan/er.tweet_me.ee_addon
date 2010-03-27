@@ -6,6 +6,16 @@ h2. Credits
 
 This plugin was is the brainchild of <a href="http://www.moogaloo.com/">Andy Marshall</a>, @moogaloo and was developed by <a href="http://erikreagan.com/">Erik Reagan</a>, @erikreagan
 
+h2. Instructions
+
+*For ExpressionEngine 1.6.x*
+
+* Upload the <code>er_tweet_me/pi.er_tweet_me.php</code> file in your <code>system/plugins</code> directory
+
+*For ExpressionEngine 2.x*
+
+* Upload the <code>er_tweet_me</code> directory to the <code>expressionengine/third_party</code> directory
+
 h2. Usage
 
 h3. Single String Use
@@ -30,8 +40,28 @@ To convert all occurrences of @name or #hashtag wrap the contents in a tag pair 
 </code>
 </pre>
 
+h3. Changing the URL
+
+If you prefer to use a website other than twitter you can specify the base URL like this:
+
+<pre>
+<code>
+{exp:er_tweet_me base_at_url="http://twittercounter.com/" base_hash_url="http://tweefind.com/queryresults.php?q="}
+{body}
+{/exp:er_tweet_me}
+</code>
+</pre>
+
 h2. Change Log
 
-*+Oct 5th, 2009: 1.0.0+*
++*Mar 27th, 2010: 1.1.0*+
+
+* Feature: Added parameter base_at_url
+* Feature: Added parameter base_hash_url
+* Feature: Updated plugin to support both EE 1.6.x and EE 2.x
+* Bug: Tweaked regular expressions to match mentions and hashes directly following HTML tags
+* Note: Assigned license to add-on: "Attribution-Share Alike 3.0 Unported":http://creativecommons.org/licenses/by-sa/3.0/
+
+*Oct 5th, 2009: 1.0.0*
 
 * Initial Release
