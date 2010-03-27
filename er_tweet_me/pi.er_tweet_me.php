@@ -1,10 +1,5 @@
 <?php
-ini_set('display_errors',E_ALL);
-// $constants = get_defined_constants(TRUE);
-// echo "<pre>";
-// print_r($constants['user']);
-// echo "</pre>";
-// exit;
+// ini_set('display_errors',E_ALL);
 
 /**
  * ER Tweet Me
