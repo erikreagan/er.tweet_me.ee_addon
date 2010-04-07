@@ -54,7 +54,11 @@ If you prefer to use a website other than twitter you can specify the base URL l
 
 h2. Change Log
 
-+*Mar 27th, 2010: 1.1.0*+
++*Apr 7th, 2010: 1.1.1*+
+
+* Feature: Added automatic link creation
+
+*Mar 27th, 2010: 1.1.0*
 
 * Feature: Added parameter base_at_url
 * Feature: Added parameter base_hash_url

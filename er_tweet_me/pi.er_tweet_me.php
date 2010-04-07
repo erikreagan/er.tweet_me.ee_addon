@@ -8,7 +8,7 @@
  * /system/plugins/ folder in your ExpressionEngine installation.
  *
  * @package ERTweetMe
- * @version 1.1.0
+ * @version 1.1.1
  * @author Erik Reagan, developer http://erikreagan.com 
  * @author Andy Marshall, concept http://www.moogaloo.com 
  * @copyright Copyright (c) 2009 Erik Reagan
@@ -18,7 +18,7 @@
 
 $plugin_info       = array(
    'pi_name'        => 'ER Tweet Me',
-   'pi_version'     => '1.1.0',
+   'pi_version'     => '1.1.1',
    'pi_author'      => 'Erik Reagan',
    'pi_author_url'  => 'http://erikreagan.com',
    'pi_description' => 'Automatically links up twitter user timeline links and hash searches',
@@ -44,14 +44,18 @@ class Er_tweet_me
       // First pattern is @names
       // Second pattern is #hashtags
       $patterns = array(
+         '/(?<![>\'"])(((f|ht){1}tp:\/\/)[-a-zA-Z0-9@:%_\+.~#?&\/\/=]+)/',
          '/(?<![a-zA-Z0-9])@([a-zA-Z0-9_]+)/',
          '/(?<![a-zA-Z0-9])#([a-zA-Z0-9_]+)/'
          );
       
       $replacements = array(
+         '<a href="$0">$0</a>',
          '<a href="'.$data_array['base_at_url'].'$1" title="$0\'s on Twitter">$0</a>',
          '<a href="'.$data_array['base_hash_url'].'$1" title="Search for $0">$0</a>'
          );
+         
+
       
       // Replace all matches and return the data
       $this->return_data = preg_replace($patterns,$replacements,$data_array['tag_data']);
